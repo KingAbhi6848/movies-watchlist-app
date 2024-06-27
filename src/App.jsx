@@ -23,11 +23,15 @@ function App() {
     dispatch(toggleWatched({ id }));
   };
 
-
+  const getReviewId = (id)=>{
+    console.log(id);
+    return id;
+  }
   const handleAddReview = (newReview) => {
-
+   const id = getReviewId();
+   const newReview1 = {...newReview,id};
    
-    dispatch(addReview(newReview));
+    dispatch(addReview(newReview1));
   };
   
 
@@ -48,9 +52,7 @@ function App() {
               <li className="nav-item">
                 <a className="nav-link" style={{fontFamily:'monospace' , fontWeight:'700'}} href="#">Watchlist</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" style={{fontFamily:'monospace',fontWeight:'700'}} href="#">Watched</a>
-              </li>
+           
             </ul>
           </div>
         </div>
@@ -59,7 +61,7 @@ function App() {
       <div className="container mt-5">
         <p className="text-muted" style={{marginLeft:'40%'}}>{movies.length === 0 ? 'No movies added.' : null}</p> 
         
-        <MovieList movies={movies} removeMovie={handleRemoveMovie} toggleWatched={handleToggleWatched} />
+        <MovieList movies={movies} removeMovie={handleRemoveMovie} toggleWatched={handleToggleWatched} getReviewId={getReviewId} />
         <AddMovieForm addMovie={handleAddMovie} />
         <AddReviewForm addReview={handleAddReview} />
       </div>

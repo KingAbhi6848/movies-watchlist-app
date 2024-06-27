@@ -7,7 +7,6 @@ const AddReviewForm = ({addReview}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle submitting the review (not implemented in this example)
     console.log('Submitting review:', rating, reviewText);
     addReview({rating,reviewText});
     setRating('');
