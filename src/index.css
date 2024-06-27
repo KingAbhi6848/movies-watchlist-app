@@ -1,0 +1,8 @@
+body {
+  padding-top: 56px; /* Space for fixed navbar */
+}
+
+.text-muted {
+  display: block;
+  margin-top: 1rem;
+}
