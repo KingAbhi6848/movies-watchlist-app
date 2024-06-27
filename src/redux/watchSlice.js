@@ -9,16 +9,18 @@ const watchlistSlice = createSlice({
     initialState,
     reducers: {
         addMovie: (state, action) => {
+            const movieId = nanoid();
             state.movies.push({
-                id: nanoid(),
+                id: movieId,
                 title: action.payload.title,
                 description: action.payload.description,
                 year: action.payload.year,
                 genre: action.payload.genre,
                 watched: false,
                 reviews: {
+                    id:movieId,
                     rating:0,
-                    reviewText:'Write you review'
+                    reviewText:"Write you review here"
                 },
             });
         },
@@ -34,19 +36,17 @@ const watchlistSlice = createSlice({
             }
         },
         addReview: (state, action) => {
-            const movie = state.movies.find(movie => movie.id === action.payload.id);
-            console.log(action.payload);
-            console.log(movie);
-            if (movie) {
-                movie.reviews.push({
-                    rating: action.payload.rating,
-                    reviewText: action.payload.reviewText,
-                });
+            const movie = state.movies.find(movie => movie.id === movie.reviews.id);
+
+            if(movie){
+                movie.reviews.rating = action.payload.rating,
+                movie.reviews.reviewText = action.payload.reviewText
+            }
             }
             
         },
     },
-});
+)
 
 export const { addMovie, deleteMovie, toggleWatched, addReview } = watchlistSlice.actions;
 
