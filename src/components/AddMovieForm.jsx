@@ -6,8 +6,8 @@ const AddMovieForm = ({ addMovie }) => {
   const [year, setYear] = useState('');
   const [genre, setGenre] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    // event.preventDefault();
     const newMovie = {
       title,
       description,

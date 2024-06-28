@@ -5,8 +5,8 @@ const AddReviewForm = ({addReview}) => {
   const [rating, setRating] = useState('');
   const [reviewText, setReviewText] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    // event.preventDefault();
     console.log('Submitting review:', rating, reviewText);
     addReview({rating,reviewText});
     setRating('');

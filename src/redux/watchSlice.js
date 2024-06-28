@@ -16,6 +16,7 @@ const loadFromLocalStorage = () => {
     } catch (e) {
         console.error("Could not load state", e);
         return undefined;
+        
     }
 };
 

@@ -33,6 +33,7 @@ const MovieCard = ({ movie, removeMovie, toggleWatched }) => {
           data-bs-toggle="modal" 
           data-bs-target="#addReviewModal"
         >
+         
           Add Review
         </button>
         
