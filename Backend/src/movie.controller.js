@@ -68,4 +68,9 @@ async rateMovie(req,res){
     return res.status(500).json({ message: "Internal server error", error: error.message });
   }
 }
+
+async getAllMovies(){
+  const movies = this.repository.getAll();
+  res.status(200).json(movies);
+}
 }

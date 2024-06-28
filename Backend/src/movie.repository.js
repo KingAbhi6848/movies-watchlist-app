@@ -68,5 +68,10 @@ async rate(id, rating) {
   }
 }
 
+async getAll(){
+  const movies = await MovieModel.find({});
+  return movies;
+}
+
 
 }
